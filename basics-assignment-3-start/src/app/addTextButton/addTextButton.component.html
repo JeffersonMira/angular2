@@ -1,0 +1,14 @@
+<!--<button type="button" class="btn btn-info" (click)="changeDisplayInfo()">Display Details</button>-->
+
+
+<!--<p [hidden]="displayInfo" >Secret Password = tuna</p>-->
+<!--<br>-->
+<!--<span  *ngFor="let clickButton of clickButtonLog" [innerText]="clickButton" [ngStyle]="{backgroundColor: getBColor(), color: getColor()  }"> </span>-->
+
+<button class="btn btn-primary"(click)="onToggleDetails()"> Display Details </button>
+<p *ngIf="showSecret">Secret Password = tuna</p>
+<!--The let i is used to access the current index. Then it is used to control the iteration-->
+<div
+  *ngFor="let logItem of clickButtonLog;  let i = index"
+  [ngStyle]="{backgroundColor: i >= 5 ? 'blue' : 'transparent'}"
+  [ngClass]="{'white-text':i >= 5}">{{ logItem }}</div>
